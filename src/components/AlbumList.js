@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text } from "react-native";
 import axios from "axios";
 import AlbumDetail from './AlbumDetail'
+import { ScrollView } from "react-native-gesture-handler";
 export default class AlbumList extends React.Component {
     state = {
       albums:[]
@@ -15,9 +15,9 @@ export default class AlbumList extends React.Component {
   render() {
     const albums = this.state.albums.map(album => <AlbumDetail key={album.title} album={album}/>)
     return (
-      <View>
-        {albums}
-      </View>
+        <ScrollView  >
+          {albums}
+        </ScrollView>
     );
   }
 }
